@@ -5,11 +5,11 @@ import java.util.regex.Pattern;
 
 public class RegexProblem {
 
-    void firstName(){
+    void lastName(){
         // Pattern for Name start with cap and has minimum 3 char.
         Pattern p = Pattern.compile("[A-Z][a-z]{2,}");
         // Matcher for giving input.
-        Matcher m = p.matcher("Rahul");
+        Matcher m = p.matcher("Kumar");
         // boolean value for check matching or not.
         boolean b = m.matches();
         System.out.println(b);
@@ -17,6 +17,6 @@ public class RegexProblem {
 
     public static void main(String[] args) {
         RegexProblem regex = new RegexProblem();
-        regex.firstName();
+        regex.lastName();
     }
 }
