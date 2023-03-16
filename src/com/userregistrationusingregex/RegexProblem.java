@@ -1,24 +1,24 @@
 package com.userregistrationusingregex;
 
+import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class RegexProblem {
 
-    void email(){
-        /* Pattern E.g. abc.xyz@bl.co.in - Email has 3 mandatory parts (abc, bl & co)
-         and 2 optional (xyz & in) with precise @ and . positions */
-
-        Pattern p = Pattern.compile("[a-z0-9+.+a-z]+@+[bl+.+co+.+in]{2,}");
-        // Matcher for giving input.
-        Matcher m = p.matcher("abc.xyz@bl.co.in");
-        // boolean value for check matching or not.
+    void mobileNumber(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter mobile number");
+        String mobileNumber = sc.nextLine();
+        // pattern for mobile number and country code followed by space and 10-digit number;
+        Pattern p = Pattern.compile("^(91)[\\s][0-9]{10}$");
+        Matcher m = p.matcher(mobileNumber);
         boolean b = m.matches();
         System.out.println(b);
     }
 
     public static void main(String[] args) {
         RegexProblem regex = new RegexProblem();
-        regex.email();
+        regex.mobileNumber();
     }
 }
