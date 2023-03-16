@@ -10,7 +10,7 @@ public class RegexProblem {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter password");
         String mobileNumber = sc.nextLine();
-        // pattern for password at-least 1 uppercase character;
+        // pattern for password at-least 1 number;
         Pattern p = Pattern.compile("[a-zA-Z0-9!@#$%^&*]{8,}");
         Matcher m = p.matcher(mobileNumber);
         boolean b = m.matches();
