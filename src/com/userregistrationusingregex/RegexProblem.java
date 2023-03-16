@@ -6,12 +6,12 @@ import java.util.regex.Pattern;
 
 public class RegexProblem {
 
-    void mobileNumber(){
+    void password(){
         Scanner sc = new Scanner(System.in);
-        System.out.println("Enter mobile number");
+        System.out.println("Enter password");
         String mobileNumber = sc.nextLine();
-        // pattern for mobile number and country code followed by space and 10-digit number;
-        Pattern p = Pattern.compile("^(91)[\\s][0-9]{10}$");
+        // pattern for password min 8 character;
+        Pattern p = Pattern.compile("[a-zA-Z0-9!@#$%^&*]{8,}");
         Matcher m = p.matcher(mobileNumber);
         boolean b = m.matches();
         System.out.println(b);
@@ -19,6 +19,6 @@ public class RegexProblem {
 
     public static void main(String[] args) {
         RegexProblem regex = new RegexProblem();
-        regex.mobileNumber();
+        regex.password();
     }
 }
