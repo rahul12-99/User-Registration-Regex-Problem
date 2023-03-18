@@ -9,10 +9,10 @@ public class RegexProblem {
     void password(){
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter password");
-        String mobileNumber = sc.nextLine();
-        // pattern for password at-least 1 number;
-        Pattern p = Pattern.compile("[a-zA-Z0-9!@#$%^&*]{8,}");
-        Matcher m = p.matcher(mobileNumber);
+        String password = sc.nextLine();
+        // pattern for password exactly 1 special char;
+        Pattern p = Pattern.compile("((?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=[^@#$%^&+!=]*[@#$%^&+!=][^@#$%^&+!=]*$)).{8,}");
+        Matcher m = p.matcher(password);
         boolean b = m.matches();
         System.out.println(b);
     }
